@@ -120,8 +120,7 @@ export const Header = () => {
               </div>
               <div className=" w-[93px] h-[22px] lg:hidden flex-nowrap ">
                 <img
-                  src="https://klbtheme.com/bacola/wp-content/uploads/2021/04/bacola-logo-mobile.png
-"
+                  src="https://klbtheme.com/bacola/wp-content/uploads/2021/04/bacola-logo-mobile.png"
                   alt="#"
                 />
               </div>
