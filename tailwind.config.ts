@@ -13,6 +13,7 @@ const config: Config = {
       center: true,
       screens: {
         lg: "1200px",
+        sm: "900px",
       },
     },
     extend: {
