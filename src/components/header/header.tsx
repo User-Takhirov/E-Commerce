@@ -11,7 +11,6 @@ import {
 
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
@@ -135,7 +134,9 @@ export const Header = () => {
               </div>
               <div className="flex items-center gap-[15px] ">
                 <div className="w-[42px] h-[42px] border border-[#e1e4ea] border-2px rounded-[50%] sm:flex justify-center items-center  hidden">
-                  <ProfilePic />
+                  <div className="cursor-pointer">
+                    <ProfilePic />
+                  </div>
                 </div>
                 <div>
                   <h3>Price $0.00</h3>
@@ -143,7 +144,9 @@ export const Header = () => {
                 <div className="bg-[#FFF1EE] p-[10px] rounded-[50%] w-[42px] h-[42px] flex justify-center items-center">
                   <Popover>
                     <PopoverTrigger asChild>
-                      <CartIcon />
+                      <div className="cursor-pointer">
+                        <CartIcon />
+                      </div>
                     </PopoverTrigger>
                     <PopoverContent className="w-80 mt-[20px] ml-[-315px]">
                       {"0" === "0" ? (
@@ -166,6 +169,25 @@ export const Header = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="pb-[20px] border-b mb-[20px]">
+          <div className="container">
+            <Popover>
+              <PopoverTrigger asChild>
+                <div className="relative">
+                  <button className="bg-[#2bbef9] py-[14px] pl-[48px] pr-[64px] rounded-[50px] font-[600] text-[15px] leading-[150%] text-white ">
+                    ALL CATEGORIES
+                  </button>
+                  <span className="block text-[10px] uppercase text-[#71778e] font-[600] py-[2px] px-[9px]  border-[1px] rounded-[18px]  bg-[#edeef5] w-[121px] absolute top-[40px] left-[38px]">
+                    TOTAL 63 PRODUCTS
+                  </span>
+                </div>
+              </PopoverTrigger>
+              <PopoverContent className="w-[270px]  mt-[15px]" align="start">
+                hello world
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
       </div>

@@ -1,10 +1,18 @@
 import React from "react";
+import { ResponceTodoT } from "@/app/page";
 
-export const Banner = ({ title, image }) => {
+import Image from "next/image";
+export const Banner: React.FC<ResponceTodoT> = ({ title, image }) => {
   return (
     <>
-      <div>{title}</div>
-      <img src={image} alt="#" />
+      <Image
+        width={870}
+        height={460}
+        quality={100}
+        priority
+        src={image}
+        alt="#"
+      />
     </>
   );
 };
