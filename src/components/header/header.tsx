@@ -1,4 +1,4 @@
-import { SecureIcon } from "@/assets/img/secure-icon";
+import { SecureIcon } from "@/assets/icons/secure-icon";
 import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -18,9 +18,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { MenuIcon, SheetIcon } from "lucide-react";
-import { CartIcon } from "@/assets/img/cart-icon";
-import { CartEmptyIcon } from "@/assets/img/cart-empty-icon";
-import { ProfilePic } from "@/assets/img/profile-pic";
+import { CartIcon } from "@/assets/icons/cart-icon";
+import { CartEmptyIcon } from "@/assets/icons/cart-empty-icon";
+import { ProfilePic } from "@/assets/icons/profile-pic";
 
 export const Header = () => {
   const pages = [
@@ -179,12 +179,12 @@ export const Header = () => {
                   <button className="bg-[#2bbef9] py-[14px] pl-[48px] pr-[64px] rounded-[50px] font-[600] text-[15px] leading-[150%] text-white ">
                     ALL CATEGORIES
                   </button>
-                  <span className="block text-[10px] uppercase text-[#71778e] font-[600] py-[2px] px-[9px]  border-[1px] rounded-[18px]  bg-[#edeef5] w-[121px] absolute top-[40px] left-[38px]">
+                  <span className="block cursor-pointer text-[10px] uppercase text-[#71778e] font-[600] py-[2px] px-[9px]  border-[1px] rounded-[18px]  bg-[#edeef5] w-[121px] absolute top-[40px] left-[38px]">
                     TOTAL 63 PRODUCTS
                   </span>
                 </div>
               </PopoverTrigger>
-              <PopoverContent className="w-[270px]  mt-[15px]" align="start">
+              <PopoverContent className="w-[270px]  mt-[16px]" align="start">
                 hello world
               </PopoverContent>
             </Popover>

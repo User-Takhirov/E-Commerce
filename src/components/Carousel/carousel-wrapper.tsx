@@ -9,21 +9,22 @@ import {
 } from "../ui/carousel";
 interface CrouselWrapperType {
   children: React.ReactNode;
+  className?: string | undefined;
 }
-export function CarouselWrapper({ children }: CrouselWrapperType) {
+export function CarouselWrapper({ children, className }: CrouselWrapperType) {
   return (
     <Carousel
       opts={{
         loop: true,
       }}
-      className="w-full max-w-[870px]"
+      className={className}
       plugins={[
         Autoplay({
           delay: 2000,
         }),
       ]}
     >
-      <CarouselContent>{children}</CarouselContent>
+      {children}
       <CarouselNext />
       <CarouselPrevious />
     </Carousel>
