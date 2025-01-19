@@ -10,19 +10,27 @@ import {
 interface CrouselWrapperType {
   children: React.ReactNode;
   className?: string | undefined;
+  plugins?: string | object | any;
+  opts?: string | object | any;
 }
-export function CarouselWrapper({ children, className }: CrouselWrapperType) {
+export function CarouselWrapper({
+  children,
+  className,
+  opts,
+  plugins,
+}: CrouselWrapperType) {
   return (
     <Carousel
-      opts={{
-        loop: true,
-      }}
+    
+      opts={opts}
       className={className}
-      plugins={[
-        Autoplay({
-          delay: 2000,
-        }),
-      ]}
+      plugins={
+        plugins && [
+          Autoplay({
+            delay: 2000,
+          }),
+        ]
+      }
     >
       {children}
       <CarouselNext />

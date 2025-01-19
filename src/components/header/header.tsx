@@ -1,7 +1,7 @@
+// "use client";
 import { SecureIcon } from "@/assets/icons/secure-icon";
 import Link from "next/link";
 import React from "react";
-import { Button } from "@/components/ui/button";
 
 import {
   Popover,

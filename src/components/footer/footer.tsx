@@ -55,55 +55,54 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-top   ">
-          <div className="container">
-            <div className="hidden lg:flex justify-center items-center py-[20px] border-b">
-              <div className="sm:w-[270px] pr-[15px] border-r">
-                <h3 className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]">
-                  <Link
-                    className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]"
-                    href={"#"}
-                  >
-                    Everyday fresh products
-                  </Link>
-                </h3>
-              </div>
-              <div className="sm:w-[270px] pr-[15px] border-r">
-                <h3 className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]">
-                  <Link
-                    className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]"
-                    href={"#"}
-                  >
-                    {" "}
-                    Free delivery for order over $70
-                  </Link>
-                </h3>
-              </div>
+        <div className="bg-[#F7F8FD] ">
+          <div className="footer-top   ">
+            <div className="container">
+              <div className="hidden lg:flex justify-center items-center py-[20px] border-b">
+                <div className="sm:w-[270px] pr-[15px] border-r">
+                  <h3 className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]">
+                    <Link
+                      className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]"
+                      href={"#"}
+                    >
+                      Everyday fresh products
+                    </Link>
+                  </h3>
+                </div>
+                <div className="sm:w-[270px] pr-[15px] border-r">
+                  <h3 className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]">
+                    <Link
+                      className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]"
+                      href={"#"}
+                    >
+                      {" "}
+                      Free delivery for order over $70
+                    </Link>
+                  </h3>
+                </div>
 
-              <div className="sm:w-[270px] pr-[15px] border-r">
-                <h3 className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]">
-                  <Link
-                    className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]"
-                    href={"#"}
-                  >
-                    Daily Mega Discounts
-                  </Link>
-                </h3>
+                <div className="sm:w-[270px] pr-[15px] border-r">
+                  <h3 className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]">
+                    <Link
+                      className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]"
+                      href={"#"}
+                    >
+                      Daily Mega Discounts
+                    </Link>
+                  </h3>
+                </div>
+                <div className="sm:w-[270px]">
+                  <h3 className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]">
+                    <Link
+                      className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]"
+                      href={"#"}
+                    >
+                      Best price on the market
+                    </Link>
+                  </h3>
+                </div>
               </div>
-              <div className="sm:w-[270px]">
-                <h3 className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]">
-                  <Link
-                    className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]"
-                    href={"#"}
-                  >
-                    Best price on the market
-                  </Link>
-                </h3>
-              </div>
-            </div>
-
-              {/* <div className="container py-[20px] border-b"> */}
-            <div className="sm:flex justify-between items-center lg:hidden py-[20px] border-b">
+              <div className="sm:flex justify-between items-center lg:hidden py-[20px] border-b">
                 <div className="1">
                   <div className="sm:w-[380px]">
                     <h3 className="font-[500]  text-[13px] leading-[150%] text-black py-[7px] pl-[33px]">
@@ -150,8 +149,382 @@ export const Footer = () => {
                   </div>
                 </div>
               </div>
-            {/* </div> */}
+            </div>
           </div>
+          <div className="urls">
+            <div className="container">
+              <nav className="lg:flex  py-[100px] lg:justify-between block">
+                <div className="1 mb-[30px]">
+                  <h3>
+                    <Link
+                      className="font-[600] text-[16px] leading-[120%] uppercase text-[#202435] mb-[20px] "
+                      href={"#"}
+                    >
+                      FRUIT & VEGETABLES
+                    </Link>
+                  </h3>
+                  <ul>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Fresh Vegetables
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Herbs & Seasonings
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Fresh Fruits
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Cuts & Sprouts
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Exotic Fruits & Veggies
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Packaged Produce
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e]  "
+                        href={"#"}
+                      >
+                        Party Trays
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="2 mb-[30px]">
+                  <h3>
+                    <Link
+                      className="font-[600] text-[16px] leading-[120%] uppercase text-[#202435] mb-[20px] "
+                      href={"#"}
+                    >
+                      Breakfast & Dairy
+                    </Link>
+                  </h3>
+                  <ul>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Milk & Flavoured Milk
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Butter and Margarine
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Cheese
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Eggs Substitutes
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Honey
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Marmalades
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Yogurt
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="3 mb-[30px]">
+                  <h3>
+                    <Link
+                      className="font-[600] text-[16px] leading-[120%] uppercase text-[#202435] mb-[20px] "
+                      href={"#"}
+                    >
+                      Meat & Seafood
+                    </Link>
+                  </h3>
+                  <ul>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Breakfast Sausage
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Dinner Sausagee
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Beef
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Chicken
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Sliced Deli Meat
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Shrimp
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Crab and Shellfish
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Farm Raised Fillets
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="4 mb-[30px]">
+                  <h3>
+                    <Link
+                      className="font-[600] text-[16px] leading-[120%] uppercase text-[#202435] mb-[20px] "
+                      href={"#"}
+                    >
+                      Beverages
+                    </Link>
+                  </h3>
+                  <ul>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Water
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Sparkling Water
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Soda & Pop
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Coffee
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Milk & Plant-Based Milk
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Tea & Kombucha
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Drink Boxes & Pouches
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Craft Beer
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="5 mb-[30px]">
+                  <h3>
+                    <Link
+                      className="font-[600] text-[16px] leading-[120%] uppercase text-[#202435] mb-[20px] "
+                      href={"#"}
+                    >
+                      Breads & Bakery
+                    </Link>
+                  </h3>
+                  <ul>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Milk & Flavoured Milk
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Butter and Margarine
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Cheese
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Eggs Substitutes
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Honey
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Marmalades
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Sour Cream and Dips
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-[400] text-[13px] leading-[150%] text-[#71778e] mb-[8px] "
+                        href={"#"}
+                      >
+                        Yogurt
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div className="hello-block container">
+          <div>hello 1</div>
+          <div>hello2</div>
         </div>
       </div>
     </>
