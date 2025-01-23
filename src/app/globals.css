@@ -67,6 +67,51 @@
   }
 }
 
-body{
+body {
   overflow-x: hidden;
+}
+/* 
+.box .btn-container .btn {
+  display: none; 
+}
+
+.box:hover .btn-container .btn {
+  display: inline-block; 
+} */
+
+.box {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  position: absolute;
+  background-color: white;
+  width: 217px;
+  z-index: 1000;
+  border: 1px solid gray;
+  height: 400px;
+  transition: transform 1s ease, box-shadow 0.3s ease;
+  transform: translateY(-2px);
+  border-radius: 7px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.box:hover .btn-container {
+  opacity: 1;
 }

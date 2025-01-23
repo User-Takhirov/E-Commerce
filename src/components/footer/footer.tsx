@@ -523,8 +523,8 @@ export const Footer = () => {
           </div>
         </div>
         <div className="hello-block container">
-          <div>hello 1</div>
-          <div>hello2</div>
+          {/* <div>hello 1</div>
+          <div>hello2</div> */}
         </div>
       </div>
     </>

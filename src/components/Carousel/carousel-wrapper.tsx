@@ -12,29 +12,42 @@ interface CrouselWrapperType {
   className?: string | undefined;
   plugins?: string | object | any;
   opts?: string | object | any;
+  comment?: string | object | any;
 }
 export function CarouselWrapper({
   children,
+  comment,
   className,
   opts,
   plugins,
 }: CrouselWrapperType) {
   return (
     <Carousel
-    
       opts={opts}
       className={className}
       plugins={
-        plugins && [
-          Autoplay({
-            delay: 2000,
-          }),
-        ]
+        plugins && !comment 
+          ? [
+              Autoplay({
+                delay: 5000,
+              }),
+            ]
+          : plugins && comment
+          ? [
+              Autoplay({
+                delay: 3000,
+              }),
+            ]
+          : undefined
       }
     >
       {children}
-      <CarouselNext />
-      <CarouselPrevious />
+      {!comment && (
+        <>
+          <CarouselNext />
+          <CarouselPrevious />
+        </>
+      )}
     </Carousel>
   );
 }

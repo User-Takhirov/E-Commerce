@@ -1,7 +1,7 @@
-// "use client";
+"use client";
 import { SecureIcon } from "@/assets/icons/secure-icon";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   Popover,
@@ -17,12 +17,27 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MenuIcon, SheetIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import { CartIcon } from "@/assets/icons/cart-icon";
 import { CartEmptyIcon } from "@/assets/icons/cart-empty-icon";
 import { ProfilePic } from "@/assets/icons/profile-pic";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteProduct, toggleAmount } from "@/redux/reducers/product-reducer";
 
 export const Header = () => {
+  const dispatch = useDispatch();
+  const { product_list, totalPrice } = useSelector(
+    (state: any) => state.product
+  );
+  const [totalPrice1, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    const total = product_list.reduce((acc: number, item: any) => {
+      return acc + item.price * item.user_count;
+    }, 0);
+    setTotalPrice(total);
+  }, [product_list]);
+  const cleanPrice = totalPrice1 || 0;
   const pages = [
     {
       id: 1,
@@ -139,7 +154,7 @@ export const Header = () => {
                   </div>
                 </div>
                 <div>
-                  <h3>Price $0.00</h3>
+                  <h3>Price ${cleanPrice.toFixed(2)}</h3>
                 </div>
                 <div className="bg-[#FFF1EE] p-[10px] rounded-[50%] w-[42px] h-[42px] flex justify-center items-center">
                   <Popover>
@@ -149,7 +164,7 @@ export const Header = () => {
                       </div>
                     </PopoverTrigger>
                     <PopoverContent className="w-80 mt-[20px] ml-[-315px]">
-                      {"0" === "0" ? (
+                      {product_list.length === 0 ? (
                         <div className="text-center">
                           <div className="bg-[#DCDEE1] overflow-hidden w-[60px] h-[60px]  text-center mx-auto rounded-[50%]  items-end inline-flex  justify-center  mb-[15px]">
                             <CartEmptyIcon />
@@ -162,7 +177,82 @@ export const Header = () => {
                           </div>
                         </div>
                       ) : (
-                        <h1>hello</h1>
+                        <>
+                          {product_list.map((item: any) => (
+                            <div
+                              key={item.id}
+                              className="mb-12  
+                              justify-between "
+                            >
+                              <div className=" items-center gap-4">
+                                <div>
+                                  <img
+                                    className="w-48"
+                                    src={item.image}
+                                    alt="img"
+                                  />
+                                </div>
+                                <div>
+                                  <p className="mb-1 font-medium text-2xl text-gray-800">
+                                    {item.title}
+                                  </p>
+                                  {item.rame && (
+                                    <p className="font-normal text-lg text-gray-800 mb-4">
+                                      {item.rame}
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-2xl text-gray-800 mb-10">
+                                  {item?.price} Сум
+                                </p>
+                                <div className="bg-gray-200 w-32 flex items-center justify-between px-2 py-1">
+                                  <button
+                                    className="bg-white rounded-none p-1 w-9 hover:bg-white"
+                                    onClick={() =>
+                                      dispatch(
+                                        toggleAmount({
+                                          id: item.id,
+                                          type: "increment",
+                                        })
+                                      )
+                                    }
+                                  >
+                                    +
+                                  </button>
+                                  <span className="font-normal text-2xl text-gray-800 leading-tight">
+                                    {item.user_count}
+                                  </span>
+                                  {item.user_count < 2 ? (
+                                    <button
+                                      className="bg-white rounded-none p-1 w-9 hover:bg-white"
+                                      onClick={() =>
+                                        dispatch(deleteProduct({ id: item.id }))
+                                      }
+                                    >
+                                      x
+                                    </button>
+                                  ) : (
+                                    <button
+                                      className="bg-white rounded-none p-1 w-9 text-center hover:bg-white"
+                                      onClick={() =>
+                                        dispatch(
+                                          toggleAmount({
+                                            id: item.id,
+                                            type: "decrement",
+                                          })
+                                        )
+                                      }
+                                    >
+                                      -
+                                    </button>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </>
                       )}
                     </PopoverContent>
                   </Popover>

@@ -5,6 +5,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { CarouselWrapper } from "@/components/Carousel/carousel-wrapper";
 import { BestSellerCards } from "@/components/best-seller-cards";
@@ -19,6 +21,13 @@ import { OrderIcon } from "@/assets/icons/order-icon";
 import { ClockIcon } from "@/assets/icons/clock-icon";
 import weekendDIS1 from "@/assets/img/weekendDIS1.png";
 import weekendDIS2 from "@/assets/img/weekendDIS2.png";
+import { TrandingProducts } from "@/components/tranding-products";
+import { CommentData } from "@/Comment-Data/comment-data";
+import { CommentCard } from "@/components/comment-card";
+import { CategoryCard } from "@/components/category-card";
+import { Cards } from "@/components/CARDS";
+import { Timer } from "@/components/Timer";
+import chobani from "@/assets/img/chobani.webp";
 
 export interface ResponceTodoT {
   title?: string;
@@ -34,12 +43,21 @@ export interface BannerDataType {
     id: number;
   }[];
 }
+export interface HomeDetailType {
+  title?: string;
+  description: string;
+  image: string;
+  id: number;
+}
 
 export default async function Home() {
   const data = await fetchWrapper<BannerDataType>("/banner", {
     next: { revalidate: 86400 },
   });
   const bestsellerCards = await fetchWrapper<BannerDataType | any>("/product", {
+    next: { revalidate: 86400 },
+  });
+  const CategoryDATA = await fetchWrapper<BannerDataType | any>("/category", {
     next: { revalidate: 86400 },
   });
 
@@ -63,7 +81,7 @@ export default async function Home() {
             </CarouselContent>
           </CarouselWrapper>
         </div>
-        <div className="best-seller flex justify-between  mb-[100px] ">
+        <div className="best-seller flex justify-between mb-[40px] ">
           <div className="ads-best-seller">
             <div>
               <div className="h-[403px] mb-[50px]">
@@ -88,7 +106,7 @@ export default async function Home() {
                   alt="#"
                 />
               </div>
-              <div className="downloadf border rounded-[7px] w-[268px]">
+              <div className=" border rounded-[7px] w-[268px] mb-[50px]">
                 <div className="1 border-b flex items-center gap-[15px] py-[23px] px-[20px]  ">
                   <DownloadIcon />
                   <h3 className="font-[400] text-[12px] leading-[150%] text-[#202435]  ">
@@ -107,6 +125,37 @@ export default async function Home() {
                     Your order will arrive at your door in 15 minutes.
                   </h3>
                 </div>
+              </div>
+              <div className="tranding products mb-[50px]">
+                <div className=" border rounded-[7px] ">
+                  {bestsellerCards?.results
+                    ?.slice(4, 9)
+                    .map((item: ResponceTodoT) => (
+                      <TrandingProducts key={item.id} {...item} />
+                    ))}
+                </div>
+              </div>
+              <div className="w-[270px]">
+                <div>
+                  <h2 className="font-[600] text-[15px] leading-[120%] uppercase text-[#202435] mb-[20px]">
+                    Customer Comment
+                  </h2>
+                </div>
+                <CarouselWrapper
+                  plugins
+                  comment
+                  opts={{
+                    loop: true,
+                  }}
+                >
+                  <CarouselContent>
+                    {CommentData?.map((item) => (
+                      <CarouselItem key={item.id}>
+                        <CommentCard key={item.id} {...item} />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </CarouselWrapper>
               </div>
             </div>
           </div>
@@ -131,13 +180,14 @@ export default async function Home() {
                         key={item.id}
                         className="basis-1/4 m-0  gap-0 p-0"
                       >
-                        <BestSellerCards key={item.id} {...item} />
+                        <BestSellerCards key={item.id} item={item} />
                       </CarouselItem>
                     ))}
                   </CarouselContent>
                 </CarouselWrapper>
               </div>
             </div>
+
             <div className="mb-[30px]">
               <Image
                 width={870}
@@ -150,7 +200,30 @@ export default async function Home() {
               />
             </div>
 
-            <div className="timer mb-[30px]">Timer</div>
+            <div className="timer mb-[30px]">
+              <div className=" pt-[30px] pb-[30px]">
+                <div className="mb-[30px]">
+                  <h2 className="text-[20px] font-semibold leading-[120%] uppercase text-[#202435]">
+                    HOT PRODUCT FOR{" "}
+                    <span className="text-[#ed174a]">THIS WEEK</span>
+                  </h2>
+                  <p className="text-[12px] font-normal leading-[150%] text-[#9b9bb4]">
+                    Dont miss this opportunity at a special discount just for
+                    this week.
+                  </p>
+                </div>
+                <Timer
+                  title="Chobani Complete Vanilla Greek Yogurt"
+                  image={chobani}
+                  originalPrice={5.49}
+                  discount={19}
+                  weight="1 kg"
+                  price={4.49}
+                  offerEndsIn={200000}
+                  inStock={true}
+                />
+              </div>
+            </div>
             <div className=" mb-[30px]">
               <div className="bg-[#ffeef2] flex items-center gap-[15px] py-[20px] justify-center rounded-[7px]  ">
                 <h2 className="font-[400] text-[16px] leading-[150%] text-[#ed174a] cursor-pointer">
@@ -179,7 +252,7 @@ export default async function Home() {
               <div className="grid grid-cols-4 border-t ">
                 {bestsellerCards?.results?.map((item: ResponceTodoT) => (
                   <div key={item.id} className="grid border-b">
-                    <BestSellerCards key={item.id} {...item} />
+                    <Cards key={item.id} item={item} />
                   </div>
                 ))}
                 {/* {[...bestsellerCards?.results, bestsellerCards?.results[0]].map(
@@ -198,6 +271,8 @@ export default async function Home() {
                   width={420}
                   height={229}
                   quality={100}
+                  priority
+                  style={{ width: "420px", height: "229px" }}
                   alt="#"
                 />
               </div>
@@ -207,10 +282,45 @@ export default async function Home() {
                   width={420}
                   height={229}
                   quality={100}
+                  priority
+                  style={{ width: "420px", height: "229px" }}
                   alt="#"
                 />
               </div>
             </div>
+          </div>
+        </div>
+        <div className="Categories flex items-center mb-[50px]">
+          <div className=" items-center">
+            {CategoryDATA?.results?.slice(1, 2).map((item: ResponceTodoT) => (
+              <div
+                className="w-[233px] h-[290px] text-center border py-[20px] px-[20px]"
+                key={item.id}
+              >
+                <div className="text-center">
+                  <Image
+                    className="text-center mx-auto"
+                    src={item.image}
+                    alt="#"
+                    width={192}
+                    quality={100}
+                    height={192}
+                    priority
+                    style={{ width: "192px", height: "192px" }}
+                  />
+                </div>
+                <div>
+                  <h2 className="font-[600] text-[14px] leading-[120%] text-[#202435]">
+                    {item.title}
+                  </h2>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-4 ">
+            {CategoryDATA?.results?.slice(2, 10).map((item: ResponceTodoT) => (
+              <CategoryCard key={item.id} {...item} />
+            ))}
           </div>
         </div>
       </div>

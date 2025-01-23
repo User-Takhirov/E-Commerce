@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { Button } from "../ui/button";
 import { useDispatch } from "react-redux";
 import { addCart } from "@/redux/reducers/product-reducer";
-
+import Link from "next/link";
 export interface BestSellerTypes {
   title?: string | undefined;
   image: string | undefined | any;
@@ -13,17 +12,19 @@ export interface BestSellerTypes {
   price?: number | any;
 }
 
-export const BestSellerCards = ({ item }: BestSellerTypes | any) => {
+export const Cards = ({ item }: BestSellerTypes | any) => {
   const [ratingValue, setRatingValue] = useState(0);
-  const disptach = useDispatch();
 
   useEffect(() => {
     const randomRating = Math.random() * 4 + 1;
     setRatingValue(Math.round(randomRating));
   }, []);
+
+  const disptach = useDispatch();
+
   return (
     <>
-      <div className="w-full m-0  p-0 border-l border-r ">
+      <div className="box relative w-full m-0 p-0 border-l border-r cursor-pointer">
         <div className="text-center flex justify-center">
           <Image
             style={{ textAlign: "center" }}
@@ -35,11 +36,13 @@ export const BestSellerCards = ({ item }: BestSellerTypes | any) => {
             alt="#"
           />
         </div>
-        <div className=" h-[196px] px-[20px] pb-[20px]  flex flex-col justify-between">
+        <div className="content h-[196px] px-[20px] pb-[20px] flex flex-col justify-between">
           <div className="others">
-            <h1 className="font-[500] w-[177px] text-[14px] leading-[140%] text-[#202435] mb-[8px]">
-              {item.title}
-            </h1>
+            <Link key={item.id} href={`/detail/${item.id}`}>
+              <h1 className="font-[500] w-[177px] text-[14px] leading-[140%] text-[#202435] mb-[8px]">
+                {item.title}
+              </h1>
+            </Link>
             <h3 className="rounded-[30px] font-[600] text-[11px] leading-[150%] uppercase text-[#00b853] mb-[10px]">
               In Stock
             </h3>
@@ -59,10 +62,13 @@ export const BestSellerCards = ({ item }: BestSellerTypes | any) => {
               </h2>
             </div>
           </div>
-          <div onClick={() => disptach(addCart(item))} className="btn">
-            <Button className="font-[500] text-[12px] leading-[150%] text-[#2bbef9] py-[8px] px-[55px] rounded-[30px] border-[#2bbef9] border hover:bg-[#2bbef9] hover:text-white ">
-              Add to cart1
-            </Button>
+          <div className="btn-container absolute bottom-4 left-0 w-full opacity-0 transition-opacity duration-300 flex justify-center">
+            <button
+              onClick={() => disptach(addCart(item))}
+              className="font-[500] text-[12px] leading-[150%] text-white bg-[#233a95] py-[8px] px-[55px] rounded-[30px] border-[#233a95]"
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
